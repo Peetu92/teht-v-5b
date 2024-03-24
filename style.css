@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+body{
+    height: 100vh;
+    background-color: black;
+    background-image: url(https:https://pixabay.com/photos/deer-fawn-animal-mammal-meadow-8182756/);
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;   
+}
+
+a:hover {
+    color: rgb(238, 223, 18);
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 50px;
+}
+
+.navbar .toggle_btn{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color:white
+}
+
+.action_btn:active{
+    scale: 0.95;
+
+}
+
+@media(max-width:992px){
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+    .navbar .toggle_btn {
+        display: block;
+    }
+}
+.dropdown_menu.open{
+    height: 150px;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right:2rem;
+    top:60px;
+    height: 0;
+    width: 300px;
+    background: rgba(19, 1, 1, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.dropdown_menu {
+    display: block;
+}
+
+@media(max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+.otsikko{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2.4rem;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.social{
+    display:flex;
+    text-align: center;
+    justify-content:center;
+    margin:auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+.social .icon{
+    margin: 0 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction:column;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.68, -0.55,0.265,1.55);
+}
+.social .icon span{
+    height: 30px;
+    width: 30px;
+    display: block;
+    position: relative;
+    background: black;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.social .icon span i{
+    font-size: 20px;
+    line-height: 30px;
+}
+.social .icon:hover  span {
+    color:#fff;
+}
+.social .icon .tooltip{
+    background: #fff;
+    position: relative;
+    top: 0px;
+    color:#fff;
+    font-size: 15px;
+    padding: 5px 9px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55,0.265,1.55);
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.social .icon:hover .tooltip{
+    top: -20px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.social .icon .tooltip:before{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+.social .icon:hover span,
+.social .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgb(0,0,0,0.4);
+
+}
+.social .facebook:hover span,
+.social .facebook:hover .tooltip,
+.social .facebook:hover .tooltip:before{
+    background: #6d93e6;
+}
+.social .linkedin:hover span,
+.social .linkedin:hover .tooltip,
+.social .linkedin:hover .tooltip:before{
+    background: #0a0b57;
+}
+.social .instagram:hover span,
+.social .instagram:hover .tooltip,
+.social .instagram:hover .tooltip:before{
+    background: #351822;
+}
+.social .github:hover span,
+.social .github:hover .tooltip,
+.social .github:hover .tooltip:before{
+    background: #333;
+}
+.social .youtube:hover span,
+.social .youtube:hover .tooltip,
+.social .youtube:hover .tooltip:before{
+    background: #531fcd;
+}
+
+.main-content {
+    display: flex; 
+    color:rgb(241, 7, 7);
+    padding: 15px;
+}
+.aside {
+    margin: auto;
+    max-width: 700px;
+    padding: 20px;
+    float:right;
+    margin-bottom: auto;
+}
+
+.section{
+    flex: 2;
+    padding: 20px;
+    margin: auto;
+}
+
+.article{
+    margin-top: 300px;
+    font-size: 120%;
+    margin-bottom: auto;
+}
+
+.kuva{
+    width: 100%;
+    height: 70%;
+}
+
+.meista{
+    color: white;
+    display: block;
+    padding: 15px;
+    margin:auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+.kartta{
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
